@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\renan\\Desktop\\ESTUDO\\Balta.io\\Fundamentos do ASP.NET 6\\MVC\\todo\\Todo.csproj": {}
+    "C:\\Users\\renan\\Desktop\\ESTUDO\\Balta.io\\Fundamentos do ASP.NET 6\\MVC\\Todo\\Todo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\renan\\Desktop\\ESTUDO\\Balta.io\\Fundamentos do ASP.NET 6\\MVC\\todo\\Todo.csproj": {
+    "C:\\Users\\renan\\Desktop\\ESTUDO\\Balta.io\\Fundamentos do ASP.NET 6\\MVC\\Todo\\Todo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\renan\\Desktop\\ESTUDO\\Balta.io\\Fundamentos do ASP.NET 6\\MVC\\todo\\Todo.csproj",
+        "projectUniqueName": "C:\\Users\\renan\\Desktop\\ESTUDO\\Balta.io\\Fundamentos do ASP.NET 6\\MVC\\Todo\\Todo.csproj",
         "projectName": "Todo",
-        "projectPath": "C:\\Users\\renan\\Desktop\\ESTUDO\\Balta.io\\Fundamentos do ASP.NET 6\\MVC\\todo\\Todo.csproj",
+        "projectPath": "C:\\Users\\renan\\Desktop\\ESTUDO\\Balta.io\\Fundamentos do ASP.NET 6\\MVC\\Todo\\Todo.csproj",
         "packagesPath": "C:\\Users\\renan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\renan\\Desktop\\ESTUDO\\Balta.io\\Fundamentos do ASP.NET 6\\MVC\\todo\\obj\\",
+        "outputPath": "C:\\Users\\renan\\Desktop\\ESTUDO\\Balta.io\\Fundamentos do ASP.NET 6\\MVC\\Todo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
