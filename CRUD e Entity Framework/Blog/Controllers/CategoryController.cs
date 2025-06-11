@@ -1,5 +1,6 @@
 ﻿using Blog.Data;
 using Blog.Models;
+using Blog.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -31,19 +32,37 @@ namespace Blog.Controllers
 
         [HttpPost("v1/categories")]
         public async Task<IActionResult> PostAsync(
-            [FromBody] Category model,
+            [FromBody] EditorCategoryViewModel model,
             [FromServices] BlogDataContext context)
         {
-            await context.Categories.AddAsync(model);
-            await context.SaveChangesAsync();
+            try
+            {
+                var category = new Category 
+                { 
+                    Id = 0,
+                    Name = model.Name,
+                    Slug = model.Slug.ToLower()
+                };
 
-            return Created($"v1/categories/{model.Id}", model);
+                await context.Categories.AddAsync(category);
+                await context.SaveChangesAsync();
+
+                return Created($"v1/categories/{category.Id}", category);
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                return StatusCode(500, "05XE9 - Não foi possivel incluir a categoria");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "05XE10 - Falha interna no servidor");
+            }
         }
 
         [HttpPut("v1/categories/{id:int}")]
         public async Task<IActionResult> PutAsync(
             [FromRoute] int id,
-            [FromBody] Category model,
+            [FromBody] EditorCategoryViewModel model,
             [FromServices] BlogDataContext context)
         {
             var category = await context.Categories.FirstOrDefaultAsync(x => x.Id == id);
@@ -57,7 +76,7 @@ namespace Blog.Controllers
             context.Categories.Update(category);
             await context.SaveChangesAsync();
 
-            return Ok();
+            return Ok(model);
         }
 
         [HttpDelete("v1/categories/{id:int}")]
