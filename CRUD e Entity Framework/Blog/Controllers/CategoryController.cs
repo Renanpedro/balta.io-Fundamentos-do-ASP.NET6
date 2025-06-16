@@ -1,4 +1,5 @@
 ﻿using Blog.Data;
+using Blog.Extensions;
 using Blog.Models;
 using Blog.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -13,8 +14,15 @@ namespace Blog.Controllers
         public async Task<IActionResult> GetAsync(
             [FromServices] BlogDataContext context)
         {
-            var categories = await context.Categories.ToListAsync();
-            return Ok(categories);
+            try
+            {
+                var categories = await context.Categories.ToListAsync();
+                return Ok(new ResultViewModel<List<Category>>(categories));
+            }
+            catch
+            {
+                return StatusCode(500, new ResultViewModel<List<Category>>("Falha interna no servidor"));
+            }
         }
 
         [HttpGet("v1/categories/{id:int}")]
@@ -22,12 +30,21 @@ namespace Blog.Controllers
             [FromRoute] int id,
             [FromServices] BlogDataContext context)
         {
-            var category = await context.Categories.FirstOrDefaultAsync(x=> x.Id == id);
+            try
+            {
+                var category = await context.Categories.FirstOrDefaultAsync(x => x.Id == id);
 
-            if(category == null)
-                    return NotFound();
+                if (category == null)
+                    return NotFound(new ResultViewModel<Category>("Conteúdo não encontrado"));
 
-            return Ok(category);
+                return Ok(new ResultViewModel<Category>(category));
+            }
+
+            catch
+            {
+                return StatusCode(500, new ResultViewModel<List<Category>>("Falha interna no servidor"));
+            }
+
         }
 
         [HttpPost("v1/categories")]
@@ -35,10 +52,13 @@ namespace Blog.Controllers
             [FromBody] EditorCategoryViewModel model,
             [FromServices] BlogDataContext context)
         {
+            if(!ModelState.IsValid)
+                return BadRequest(new ResultViewModel<Category>(ModelState.GetErros()));
+
             try
             {
-                var category = new Category 
-                { 
+                var category = new Category
+                {
                     Id = 0,
                     Name = model.Name,
                     Slug = model.Slug.ToLower()
@@ -47,7 +67,7 @@ namespace Blog.Controllers
                 await context.Categories.AddAsync(category);
                 await context.SaveChangesAsync();
 
-                return Created($"v1/categories/{category.Id}", category);
+                return Created($"v1/categories/{category.Id}", new ResultViewModel<Category>(category));
             }
             catch (DbUpdateConcurrencyException ex)
             {
