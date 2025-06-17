@@ -162,3 +162,11 @@ C:\Users\renan\Desktop\ESTUDO\Balta.io\Fundamentos do ASP.NET 6\CRUD e Entity Fr
 C:\Users\renan\Desktop\ESTUDO\Balta.io\Fundamentos do ASP.NET 6\CRUD e Entity Framework\Blog\obj\Debug\net8.0\Blog.pdb
 C:\Users\renan\Desktop\ESTUDO\Balta.io\Fundamentos do ASP.NET 6\CRUD e Entity Framework\Blog\obj\Debug\net8.0\Blog.genruntimeconfig.cache
 C:\Users\renan\Desktop\ESTUDO\Balta.io\Fundamentos do ASP.NET 6\CRUD e Entity Framework\Blog\obj\Debug\net8.0\ref\Blog.dll
+C:\Users\renan\Desktop\ESTUDO\Balta.io\Fundamentos do ASP.NET 6\CRUD e Entity Framework\Blog\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\renan\Desktop\ESTUDO\Balta.io\Fundamentos do ASP.NET 6\CRUD e Entity Framework\Blog\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\renan\Desktop\ESTUDO\Balta.io\Fundamentos do ASP.NET 6\CRUD e Entity Framework\Blog\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+C:\Users\renan\Desktop\ESTUDO\Balta.io\Fundamentos do ASP.NET 6\CRUD e Entity Framework\Blog\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll
+C:\Users\renan\Desktop\ESTUDO\Balta.io\Fundamentos do ASP.NET 6\CRUD e Entity Framework\Blog\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\renan\Desktop\ESTUDO\Balta.io\Fundamentos do ASP.NET 6\CRUD e Entity Framework\Blog\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
+C:\Users\renan\Desktop\ESTUDO\Balta.io\Fundamentos do ASP.NET 6\CRUD e Entity Framework\Blog\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\renan\Desktop\ESTUDO\Balta.io\Fundamentos do ASP.NET 6\CRUD e Entity Framework\Blog\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
